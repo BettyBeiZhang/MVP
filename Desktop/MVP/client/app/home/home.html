@@ -1,0 +1,32 @@
+<div>
+    <a href="#/homepage">HomePage</a>
+    <a href="#/takeNote">Take a Diary</a>
+    <a href="#/rendernotes">Your Entry</a>
+    
+</div>
+
+
+<div class="calendar"> 
+        <header class="header">   
+          <h3>December 2016</h3>
+        </header>
+      <table>
+        <tr>
+          <td>Sunday</td>
+          <td>Monday</td>
+          <td>Tuesday</td>
+          <td>Wednesday</td>
+          <td>Thursday</td>
+          <td>Friday</td>
+          <td>Saturday</td>
+        </tr>
+
+        <tr ng-repeat='week in dates' > 
+          <td ng-repeat='day in week' ng-click='clickEle(day)'>
+             {{ day }}
+
+          </td></tr>
+          
+</div>
+    
+   

@@ -1,0 +1,32 @@
+<div>   
+
+  <a href= "#/rendernotes">Click to See how many Entrys Today</a>
+     <div class="row">
+      <div class="col-xs-4 page-title">Make an Entry</div> 
+      <div class="col-xs-4 col-xs-offset-4 text-right">
+          <div class="date">{{date}}</div>
+          <div> {{userName}} </div>
+      </div>
+  
+    </div>
+    <hr />
+
+  <form>
+  <div class="form-group">
+    <label for="entrytitle">Entry Title</label>
+    <input  ng-model="titleArea" type="text" class="form-control" id="entrytitle" placeholder="Entry Title">
+  </div>
+
+  <div class="form-group">
+    <label for="textbody">Entry Text</label>
+    <textarea  ng-model="textArea" class="form-control" rows="3" id="textbody" placeholder="Entry Message"></textarea>
+  </div>      
+   
+  <button type="submit" class="btn btn-default" ng-click="all()">Submit</button>
+
+</form>
+
+    
+</div>
+
+ 

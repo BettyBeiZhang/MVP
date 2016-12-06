@@ -1,0 +1,15 @@
+
+<div class="form-group">
+    <label for="textbody">Click to see your Entry</label>
+    <!-- <textarea ng-model='textArea' class="form-control"  id="textbody" placeholder="See your Message"></textarea> -->
+
+    <div ng-repeat='obj in data'>
+     <div>{{obj.EntryText}}</div>
+     <div>{{obj.YMD}}</div>
+       
+    </div> 
+    
+
+    <button type="submit" class="btn btn-default" ng-click="render()">Submit</button>
+</div>      
+   

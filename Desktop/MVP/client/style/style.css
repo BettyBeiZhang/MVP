@@ -1,0 +1,43 @@
+.title {
+	text-decoration: bold; 
+	text-align: center;
+}
+
+#homePhoto {
+	align-content: center;
+}
+
+body {
+	background-color: lightblue;
+}
+
+.calendar {
+   width: 616px;
+   margin: 0 auto; 
+
+}
+/*.date {
+	margin: 13px; 
+}*/
+
+.page-title {
+	font-size: 32px;
+
+}
+
+.header {
+    overflow: clear;
+    position: relative;
+}
+
+
+td {
+	cursor: pointer;
+	padding: 15px;
+}
+
+label {
+	text-align: center;
+	
+
+}
