@@ -34,8 +34,6 @@ app.post('/takeNote', function(request, response) {
 }); 
 
 app.post('/rendernotes', function(request, response) {
-	console.log('the date', request.body);
-   //var queryString = 'select * From note where YMD = "' + request.body.note.date + '"'; 
     var queryString = `select * From Note where YMD="${request.body.date}"`; 
    console.log('queryString', queryString);
     dbConnection.query(queryString, function(err, results, fields) {
