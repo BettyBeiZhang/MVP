@@ -18,7 +18,7 @@ angular.module('app.services',[])
 
   var setDay = function(day) {
     day = day;
-    date = moment([2016, 11, day]);
+    date = moment([2017, 3, day]);
   
   };
 
