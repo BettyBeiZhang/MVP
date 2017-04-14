@@ -44,8 +44,12 @@ app.post('/rendernotes', function(request, response) {
 });
 
 
+// if(process.env.NODE_ENV !== 'production') {
+
+// }
+
 var port = 8080;
 
 
-app.listen(port);
+app.listen(process.env.PORT || port);
 console.log('Listening to port:' + port); 
