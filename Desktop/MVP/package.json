@@ -2,11 +2,11 @@
   "name": "myapp",
   "version": "1.0.0",
   "description": "diarybook",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "npm install",
-    "start":"node app.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
