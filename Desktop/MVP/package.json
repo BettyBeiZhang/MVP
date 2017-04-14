@@ -4,7 +4,9 @@
   "description": "diarybook",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm install",
+    "start":"node app.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,5 @@
     "http": "0.0.0",
     "mysql": "^2.12.0",
     "path": "^0.12.7"
-  },
-  "scripts": {
-    "start": "node server/app.js"
   }
 }
