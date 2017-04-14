@@ -3,6 +3,7 @@ var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
+var config = require("../config/index.js");
 
 var app = express();
 
@@ -44,8 +45,10 @@ app.post('/rendernotes', function(request, response) {
 });
 
 
-var port = 8080;
+
+app.listen(config.port,function(){
+console.log(` server listening on port *:${config.port}`); 
+});
 
 
-app.listen(process.env.PORT || port);
-console.log('Listening to port:' + port); 
+
