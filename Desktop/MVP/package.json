@@ -2,7 +2,7 @@
   "name": "myapp",
   "version": "1.0.0",
   "description": "diarybook",
-  "main": "app.js",
+  "main": "web: node server.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/BettyBeiZhang/MVP.git"
