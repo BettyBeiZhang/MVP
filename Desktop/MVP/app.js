@@ -20,9 +20,8 @@ var dbConnection = mysql.createConnection({
 	user: 'root',
 	password: '',
 	database: 'DiaryNotes',
-	socketPath:'/var/run/mysqld/mysqld.sock',
-	// socketPath: '/tmp/mysql.sock',
-	port : '3306'
+	socketPath: '/tmp/mysql.sock',
+	port : 3306
 
 });
 
