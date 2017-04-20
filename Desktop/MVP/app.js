@@ -20,7 +20,7 @@ var dbConnection = mysql.createConnection({
 	password: '',
 	database: 'DiaryNotes',
 	socketPath: '/tmp/mysql.sock',
-	host : 'cloud_instance_private_ip'
+	port : "8889"
 
 });
 
