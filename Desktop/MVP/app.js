@@ -18,7 +18,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var dbConnection = mysql.createConnection({
 	user: 'root',
 	password: '',
-	database: 'DiaryNotes'
+	database: 'DiaryNotes',
+	socketPath: '/tmp/mysql.sock',
+	host : 'cloud_instance_private_ip'
+
 });
 
 dbConnection.connect();
