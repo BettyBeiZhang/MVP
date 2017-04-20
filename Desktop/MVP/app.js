@@ -48,6 +48,11 @@ app.get('/cool', function(request, response) {
 	response.send(cool());
 })
 
-app.listen(config.port,function(){
-console.log(` server listening on port *:${config.port}`);
+
+// aoppc.listen(config.port,function(){
+// console.log(` server listening on port *:${config.port}`);
+// });
+
+app.listen(config.port, config.ip, function () {
+  console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
