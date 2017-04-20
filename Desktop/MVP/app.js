@@ -16,11 +16,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var dbConnection = mysql.createConnection({
+	host:'127.0.0.1',
 	user: 'root',
 	password: '',
 	database: 'DiaryNotes',
 	socketPath: '/tmp/mysql.sock',
-	port : "8889"
+	port : '3306'
 
 });
 
