@@ -25,46 +25,40 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //
 // });
 //
-// var dbConnection = mysql.createConnection({
-// 	host:'us-cdbr-east-04.cleardb.com',
-// 	user: 'beeca702b5929e',
-// 	password: "dceaa008",
-// 	database: 'heroku_b1744734a5527da',
-// 	port : 3306
-//
-// });
+var dbConnection = mysql.createConnection({
+	host:'us-cdbr-iron-east-03.cleardb.net',
+	user: 'bf4ab44c1b29c7',
+	password: "8516876a",
+	database: 'heroku_feefe01914f3eb6'
+});
 
-// dbConnection.connect();
+dbConnection.connect();
 
 
 
-// app.post('/takeNote', function(request, response) {
-// 	var params = [request.body.note.titleArea, request.body.note.textArea,request.body.note.date];
-// 	var queryString = 'INSERT INTO Note (EntryTitle, EntryText, YMD) values (?, ?, ?)';
-//      //console.log(request.body.note.titleArea, request.body.note.date);
-// 	 dbConnection.query(queryString, params, function(err,rows,fields) {
-// 		response.json(rows);
-// 	});
-//
-// });
-//
-// app.post('/rendernotes', function(request, response) {
-//     var queryString = `select * From Note where YMD="${request.body.date}"`;
-//    console.log('queryString', queryString);
-//     dbConnection.query(queryString, function(err, results, fields) {
-//     	if(err) console.log(err);
-//    	   response.send(results);
-//     });
-// });
+app.post('/takeNote', function(request, response) {
+	var params = [request.body.note.titleArea, request.body.note.textArea,request.body.note.date];
+	var queryString = 'INSERT INTO Note (EntryTitle, EntryText, YMD) values (?, ?, ?)';
+     //console.log(request.body.note.titleArea, request.body.note.date);
+	 dbConnection.query(queryString, params, function(err,rows,fields) {
+		response.json(rows);
+	});
+
+});
+
+app.post('/rendernotes', function(request, response) {
+    var queryString = `select * From Note where YMD="${request.body.date}"`;
+   console.log('queryString', queryString);
+    dbConnection.query(queryString, function(err, results, fields) {
+    	if(err) console.log(err);
+   	   response.send(results);
+    });
+});
 
 app.get('/cool', function(request, response) {
 	response.send(cool());
-})
+});
 
-
-// aoppc.listen(config.port,function(){
-// console.log(` server listening on port *:${config.port}`);
-// });
 
 app.listen(config.port, config.ip, function () {
   console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
