@@ -15,38 +15,47 @@ app.use('/modules', express.static(path.join(__dirname, '/node_modules')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var dbConnection = mysql.createConnection({
-	host:'localhost' || 'us-cdbr-east-04.cleardb.com',
-	user: 'root' ||'beeca702b5929e',
-	password: '' ||"dceaa008",
-	database: 'DiaryNotes' || 'heroku_b1744734a5527da',
-	socketPath: '/tmp/mysql.sock',
-	port : 3306
+// var dbConnection = mysql.createConnection({
+// 	host:'localhost' || 'us-cdbr-east-04.cleardb.com',
+// 	user: 'root' ||'beeca702b5929e',
+// 	password: '' || "dceaa008",
+// 	database: 'DiaryNotes' || 'heroku_b1744734a5527da',
+// 	socketPath: '/tmp/mysql.sock',
+// 	port : 3306
+//
+// });
+//
+// var dbConnection = mysql.createConnection({
+// 	host:'us-cdbr-east-04.cleardb.com',
+// 	user: 'beeca702b5929e',
+// 	password: "dceaa008",
+// 	database: 'heroku_b1744734a5527da',
+// 	port : 3306
+//
+// });
 
-});
-
-dbConnection.connect();
+// dbConnection.connect();
 
 
 
-app.post('/takeNote', function(request, response) {
-	var params = [request.body.note.titleArea, request.body.note.textArea,request.body.note.date];
-	var queryString = 'INSERT INTO Note (EntryTitle, EntryText, YMD) values (?, ?, ?)';
-     //console.log(request.body.note.titleArea, request.body.note.date);
-	 dbConnection.query(queryString, params, function(err,rows,fields) {
-		response.json(rows);
-	});
-
-});
-
-app.post('/rendernotes', function(request, response) {
-    var queryString = `select * From Note where YMD="${request.body.date}"`;
-   console.log('queryString', queryString);
-    dbConnection.query(queryString, function(err, results, fields) {
-    	if(err) console.log(err);
-   	   response.send(results);
-    });
-});
+// app.post('/takeNote', function(request, response) {
+// 	var params = [request.body.note.titleArea, request.body.note.textArea,request.body.note.date];
+// 	var queryString = 'INSERT INTO Note (EntryTitle, EntryText, YMD) values (?, ?, ?)';
+//      //console.log(request.body.note.titleArea, request.body.note.date);
+// 	 dbConnection.query(queryString, params, function(err,rows,fields) {
+// 		response.json(rows);
+// 	});
+//
+// });
+//
+// app.post('/rendernotes', function(request, response) {
+//     var queryString = `select * From Note where YMD="${request.body.date}"`;
+//    console.log('queryString', queryString);
+//     dbConnection.query(queryString, function(err, results, fields) {
+//     	if(err) console.log(err);
+//    	   response.send(results);
+//     });
+// });
 
 app.get('/cool', function(request, response) {
 	response.send(cool());
