@@ -3,6 +3,7 @@ var path = require('path');
 var express = require('express');
 var bodyParser = require('body-parser');
 var mysql = require('mysql');
+var cool = require('cool-ascii-faces');
 var config = require("./config");
 
 var app = express();
@@ -31,24 +32,22 @@ app.post('/takeNote', function(request, response) {
 	 dbConnection.query(queryString, params, function(err,rows,fields) {
 		response.json(rows);
 	});
- 
-}); 
+
+});
 
 app.post('/rendernotes', function(request, response) {
-    var queryString = `select * From Note where YMD="${request.body.date}"`; 
+    var queryString = `select * From Note where YMD="${request.body.date}"`;
    console.log('queryString', queryString);
     dbConnection.query(queryString, function(err, results, fields) {
     	if(err) console.log(err);
    	   response.send(results);
     });
-
 });
 
-
+app.get('/cool', function(request, response) {
+	response.send(cool());
+})
 
 app.listen(config.port,function(){
-console.log(` server listening on port *:${config.port}`); 
+console.log(` server listening on port *:${config.port}`);
 });
-
-
-
