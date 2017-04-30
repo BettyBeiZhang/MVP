@@ -22,6 +22,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "prestart": "npm install"
+    "prestart": "npm install",
+    "heroku-prebuild": "npm uninstall angular angular-route --save",
+    "heroku-postbuild": "npm install angular@1.5.9 angular-route@1.5.9 --save"
   }
 }
+
