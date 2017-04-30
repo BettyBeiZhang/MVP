@@ -1,4 +1,5 @@
-use DiaryNotes;
+-- use DiaryNotes;
+use heroku_feefe01914f3eb6;
 
 CREATE TABLE Note (
   EntryTitle VARCHAR(141) NOT NULL,  

@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var db_config = {
 	host:'us-cdbr-iron-east-03.cleardb.net',
 	user: 'bf4ab44c1b29c7',
-	password: "8516876a",
+	password: '8516876a',
 	database: 'heroku_feefe01914f3eb6'
 };
 
