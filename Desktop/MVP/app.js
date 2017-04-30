@@ -16,10 +16,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // var dbConnection = mysql.createConnection({
-// 	host:'localhost' || 'us-cdbr-east-04.cleardb.com',
-// 	user: 'root' ||'beeca702b5929e',
-// 	password: '' || "dceaa008",
-// 	database: 'DiaryNotes' || 'heroku_b1744734a5527da',
+// 	host:'localhost',
+// 	user: 'root',
+// 	password: '',
+// 	database: 'DiaryNotes',
 // 	socketPath: '/tmp/mysql.sock',
 // 	port : 3306
 //
